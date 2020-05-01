@@ -163,7 +163,10 @@ class Client {
           } else {
             // Add it to the position buffer.
             var timestamp = +new Date();
-            entity.position_buffer.push([timestamp, state.position]);
+            entity.position_buffer.push({
+              timestamp,
+              position: state.position,
+            });
           }
         }
       }
@@ -187,20 +190,20 @@ class Client {
       var buffer = entity.position_buffer;
 
       // Drop older positions.
-      while (buffer.length >= 2 && buffer[1][0] <= render_timestamp) {
+      while (buffer.length >= 2 && buffer[1].timestamp <= render_timestamp) {
         buffer.shift();
       }
 
       // Interpolate between the two surrounding authoritative positions.
       if (
         buffer.length >= 2 &&
-        buffer[0][0] <= render_timestamp &&
-        render_timestamp <= buffer[1][0]
+        buffer[0].timestamp <= render_timestamp &&
+        render_timestamp <= buffer[1].timestamp
       ) {
-        var x0 = buffer[0][1];
-        var x1 = buffer[1][1];
-        var t0 = buffer[0][0];
-        var t1 = buffer[1][0];
+        var x0 = buffer[0].position;
+        var x1 = buffer[1].position;
+        var t0 = buffer[0].timestamp;
+        var t1 = buffer[1].timestamp;
 
         entity.x = x0 + ((x1 - x0) * (render_timestamp - t0)) / (t1 - t0);
       }
