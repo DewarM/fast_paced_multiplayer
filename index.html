@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="border: 5px solid blue; padding: 15px;">
+        <p><b>Player 1 view</b> - move with LEFT and RIGHT arrow keys<br> Lag = <input type="text" id="player1_lag" size=5 value="250" onchange="_ui.updateParameters();">ms</input> · <input type="checkbox" id="player1_prediction" onchange="_ui.updateParameters();">Prediction</input> · <input type="checkbox" id="player1_reconciliation" onchange="_ui.updateParameters();">Reconciliation</input> · <input type="checkbox" id="player1_interpolation" onchange="_ui.updateParameters();">Interpolation</input></p>
+        <canvas id="player1_canvas" width="920" height="75">
+        </canvas>
+        <div id="player1_status" style="font-family:courier;">
+        Waiting for connection…
+        </div>
+        </div>
+        <div style="height: 1em;">
+        
+        </div>
+        <div style="border: 2px solid grey; padding: 15px;">
+        <p><b>Server view</b> · Update <input type="text" id="server_fps" size=5 value="3" onchange="_ui.updateParameters();"> times per second</input></p>
+        <canvas id="server_canvas" width="920" height="75">
+        </canvas>
+        <div id="server_status" style="font-family:courier;">
+        
+        </div>
+        </div>
+        <div style="height: 1em;">
+        
+        </div>
+        <div style="border: 5px solid red; padding: 15px;">
+        <p><b>Player 2 view</b> - move with A and D keys<br> Lag = <input type="text" id="player2_lag" size=5 value="150" onchange="_ui.updateParameters();">ms</input> · <input type="checkbox" id="player2_prediction" onchange="_ui.updateParameters();">Prediction</input> · <input type="checkbox" id="player2_reconciliation" onchange="_ui.updateParameters();">Reconciliation</input> · <input type="checkbox" id="player2_interpolation" onchange="_ui.updateParameters();">Interpolation</input></p>
+        <canvas id="player2_canvas" width="920" height="75">
+        </canvas>
+        <div id="player2_status" style="font-family:courier;">
+        Waiting for connection…
+        </div>
+        </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
