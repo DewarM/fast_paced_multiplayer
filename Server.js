@@ -13,7 +13,7 @@ class Server {
     this.entities = [];
 
     // Last processed input for each client.
-    this.last_processed_input = [];
+    this.last_processed_input = {};
 
     // Simulated network connection.
     this.network = new LagNetwork();

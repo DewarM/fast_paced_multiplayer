@@ -44,14 +44,9 @@ class Client {
     this.update_rate = hz;
 
     clearInterval(this.update_interval);
-    this.update_interval = setInterval(
-      (function (self) {
-        return function () {
-          self.update();
-        };
-      })(this),
-      1000 / this.update_rate
-    );
+    this.update_interval = setInterval(() => {
+      this.update();
+    }, 1000 / this.update_rate);
   }
 
   // Update Client state.
