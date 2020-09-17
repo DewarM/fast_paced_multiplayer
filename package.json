@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel index.html"
+    "dev": "parcel index.html",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "parcel": "^1.12.4"
-  }
+    "parcel": "^1.12.4",
+    "snyk": "^1.398.1"
+  },
+  "snyk": true
 }
