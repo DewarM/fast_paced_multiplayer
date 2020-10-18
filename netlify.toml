@@ -1,0 +1,11 @@
+
+
+# Deploy Preview context:
+# All deploys generated from a pull/merge request
+# will inherit these settings.
+# we need to have a different preview build 
+# process as we want to serve the
+# resources from a different path
+
+[context.deploy-preview]
+  command = "npm run build:preview-deploy"
