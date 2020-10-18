@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel index.html",
+    "build": "parcel build index.html -d dist/fast-paced-multiplayer --public-url .",
+    "build:preview-deploy": "parcel build index.html", 
     "snyk-protect": "snyk protect",
     "prepare": "npm run snyk-protect"
   },
