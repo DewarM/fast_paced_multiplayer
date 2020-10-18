@@ -12,3 +12,8 @@
 
 [context.deploy-preview]
   command = "npm run build:preview-deploy"
+
+[[redirects]]
+  from = "/"
+  to = "fast_paced_multiplayer/"
+  status = 200
