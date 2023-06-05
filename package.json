@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "parcel": "^1.12.4",
-    "snyk": "^1.399.1"
+    "snyk": "^1.1155.0"
   },
   "snyk": true
 }
